@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resources :sessions
+
   root :to => 'assets#index'
   get 'assets/index'
 

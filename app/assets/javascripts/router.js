@@ -3,15 +3,12 @@
 Emberapp.Router.map(function() {
     this.resource('posts')
     this.resource('users')
+    this.route('login')
 })
 
-Emberapp.ApplicationRoute = Ember.Route.extend({
-    model: function() {
-        return {
-            hej: 2
-        }
-    }
-})
+//window.redirect = function(kek) {
+//    that.transitionToRoute(kek)
+//}
 
 Emberapp.UsersRoute = Ember.Route.extend({
     model: function() {
@@ -21,3 +18,4 @@ Emberapp.UsersRoute = Ember.Route.extend({
         }
     }
 });
+
