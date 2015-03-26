@@ -6,5 +6,5 @@
 #= require emberapp
 
 # for more details see: http://emberjs.com/guides/application/
-window.Emberapp = Ember.Application.create()
+window.App = Ember.Application.create()
 

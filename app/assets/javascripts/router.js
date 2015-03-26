@@ -1,19 +1,22 @@
 //# For more information see: http://emberjs.com/guides/routing/
 
-Emberapp.Router.map(function() {
-    this.resource('posts')
+App.Router.map(function() {
+    this.resource('posts', function() {
+        this.resource('post', { path: '/:post_id'})
+        this.route('new')
+    })
     this.resource('users')
 })
 
-Emberapp.ApplicationRoute = Ember.Route.extend({
+App.PostsRoute = Ember.Route.extend({
     model: function() {
         return {
-            hej: 2
+            posts: this.store.find('post')
         }
     }
 })
 
-Emberapp.UsersRoute = Ember.Route.extend({
+App.UsersRoute = Ember.Route.extend({
     model: function() {
         return {
             users: this.store.find('user'),
@@ -21,3 +24,20 @@ Emberapp.UsersRoute = Ember.Route.extend({
         }
     }
 });
+
+App.IndexRoute = Ember.Route.extend({
+    redirect: function() {
+        this.transitionTo('posts');
+    }
+});
+
+//App.PostsNewRoute = Ember.Route.extend({
+//    model: function() {
+//        //return this.store.find('post', 1)
+//        return this.store.createRecord('post',
+//            {
+//                title: "random title",
+//                text: "doit"
+//            })
+//    }
+//})

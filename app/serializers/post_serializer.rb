@@ -11,5 +11,7 @@
 #
 
 class PostSerializer < ApplicationSerializer
-  attributes :id, :title, :text, :user_id
+  embed :ids, :include => true
+
+  attributes :id, :title, :text, :user_id, :user
 end
