@@ -6,8 +6,10 @@ App.Router.map(function() {
         this.route('new')
     })
     this.resource('users')
+    this.route('login')
 })
 
+<<<<<<< HEAD
 App.PostsRoute = Ember.Route.extend({
     model: function() {
         return {
@@ -15,6 +17,11 @@ App.PostsRoute = Ember.Route.extend({
         }
     }
 })
+=======
+//window.redirect = function(kek) {
+//    that.transitionToRoute(kek)
+//}
+>>>>>>> e66b5b1e4ec53ba3bc4cdcd00ceaabaae8ef8502
 
 App.UsersRoute = Ember.Route.extend({
     model: function() {
@@ -25,6 +32,7 @@ App.UsersRoute = Ember.Route.extend({
     }
 });
 
+<<<<<<< HEAD
 App.IndexRoute = Ember.Route.extend({
     redirect: function() {
         this.transitionTo('posts');
@@ -41,3 +49,5 @@ App.IndexRoute = Ember.Route.extend({
 //            })
 //    }
 //})
+=======
+>>>>>>> e66b5b1e4ec53ba3bc4cdcd00ceaabaae8ef8502

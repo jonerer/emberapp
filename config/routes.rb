@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    collection do
+      get :me
+    end
+  end
 
   resources :posts
+
+  resources :sessions
 
   root :to => 'assets#index'
   get 'assets/index'
