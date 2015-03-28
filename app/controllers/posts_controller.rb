@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    p params
     Post.create!(post_params)
   end
 

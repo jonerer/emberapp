@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   end
 
   def me
-    render json: current_user
+    cu = current_user
+    print "Session ID: #{request.session_options[:id]}"
+    p session.keys
+    render json: cu
   end
 end
